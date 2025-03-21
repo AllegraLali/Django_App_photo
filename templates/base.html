@@ -21,7 +21,8 @@
                 {% if perms.blog.add_photo %}
                     <p><a href="{% url 'photo_upload' %}">Téléverser une photo</a></p>
                     <p><a href="{% url 'create_multiple_photos' %}">Téléverser plusieurs photos</a></p>
-                {% endif %}     
+                {% endif %}
+                <p><a href="{% url 'follow_users' %}">Suivre les utilisateurs</a></p>     
                 <p><a href="{% url 'upload_profile_photo' %}">Changer la photo de profil</a></p>
                 <p><a href="{% url 'password_change' %}">Changer le mot de passe</a></p>
                 <form action="{% url 'logout' %}" method="post">
