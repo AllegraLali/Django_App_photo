@@ -29,7 +29,10 @@ class Blog(models.Model):
     content = models.CharField(max_length=5000)
     starred = models.BooleanField(default=False)
     word_count = models.IntegerField(null=True)
-    contributors = models.ManyToManyField(settings.AUTH_USER_MODEL, through="BlogContributor", related_name="contributions")
+    contributors = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, through="BlogContributor", related_name="contributions"
+        )
+    date_created = models.DateTimeField(auto_now_add=True)
     
     def _get_word_count(self):
         return len(self.content.split(""))

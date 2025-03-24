@@ -28,11 +28,13 @@ urlpatterns = [
          name="upload_profile_photo"),
     path("home/", blog.views.home, name="home"),
     path("photo/upload/", blog.views.photo_upload, name="photo_upload"),
+    path("photo-feed/", blog.views.photo_feed, name="photo_feed"),
     path("blog/create/", blog.views.blog_and_photo_upload, name="blog_create"),
     path("blog/<int:blog_id>", blog.views.view_blog, name="view_blog"),
     path("blog/<int:blog_id>/edit/", blog.views.edit_blog, name="edit_blog"),
     path("photo/upload-multiple/", blog.views.create_multiple_photos, name="create_multiple_photos"),
     path("follow-users/", blog.views.follow_users, name="follow_users"),
+    #path("photo/upload/", blog.views.photo_feed, name="photo_upload"),
 ]
 if settings.DEBUG:
     urlpatterns += static(
